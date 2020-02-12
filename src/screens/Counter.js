@@ -2,31 +2,38 @@
 import React, { Component } from 'react';
 import { Dimensions, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
+import { Button, WhiteSpace, WingBlank } from '@ant-design/react-native';
 
 // Screen Dimensions
 const { height, width } = Dimensions.get('window');
 
 // Screen: Counter
-class Counter extends React.Component {
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.counterTitle}>Counter</Text>
+const Counter = ({
+  navigation,
+  reduxIncreaseCounter,
+  reduxDecreaseCounter,
+  counter,
+}) => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.counterTitle}>Counter</Text>
 
-        <View style={styles.counterContainer}>
-          <TouchableOpacity onPress={this.props.reduxIncreaseCounter}>
-            <Text style={styles.buttonText}>+</Text>
-          </TouchableOpacity>
+      <View style={styles.counterContainer}>
+        <TouchableOpacity onPress={reduxIncreaseCounter}>
+          <Text style={styles.buttonText}>+</Text>
+        </TouchableOpacity>
 
-          <Text style={styles.counterText}>{this.props.counter}</Text>
+        <Text style={styles.counterText}>{counter}</Text>
 
-          <TouchableOpacity onPress={this.props.reduxDecreaseCounter}>
-            <Text style={styles.buttonText}>-</Text>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
-    )
-  }
+        <TouchableOpacity onPress={reduxDecreaseCounter}>
+          <Text style={styles.buttonText}>-</Text>
+        </TouchableOpacity>
+      </View>
+      <Button
+        onPress={() => navigation.navigate('Scanner', { name: 'Jane'} )}
+      >Go to Scanner</Button>
+    </SafeAreaView>
+  )
 }
 
 // Styles
