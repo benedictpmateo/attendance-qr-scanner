@@ -3,12 +3,13 @@ import {Provider} from 'react-redux';
 import {store} from './store';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Counter from './src/screens/Counter';
-import Scanner from './src/screens/Scanner';
-import Home from './src/screens/Home'
-import { Button, WhiteSpace, WingBlank } from '@ant-design/react-native';
 import { BlurView } from 'expo-blur';
 import { StyleSheet } from 'react-native'
+
+import Scanner from './src/screens/Scanner';
+import Home from './src/screens/Home'
+import RegisterUser from './src/screens/RegisterUser';
+import Users from './src/screens/Users';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -38,6 +39,14 @@ const App = () => {
           <Stack.Screen
             name="Scanner"
             component={Scanner}
+          />
+          <Stack.Screen
+            name="Register User"
+            component={RegisterUser}
+          />
+          <Stack.Screen
+            name="Users"
+            component={Users}
           />
         </Stack.Navigator>
       </NavigationContainer>

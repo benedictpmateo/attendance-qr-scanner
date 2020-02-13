@@ -25,20 +25,28 @@ const Home = ({ navigation }) => (
     <WhiteSpace size="lg"/>
 
     <WingBlank>
-      <Text
-        style={styles.titleText}
-      >
-        Attendance
-      </Text>
-
-      <WhiteSpace
-        size="lg"
-      />
       <Graph />
-      <PlaceHolder
-        label="Attendance Scanner"
+      <Button
+        type="primary"
         onPress={() => navigation.navigate('Scanner')}
-      />
+        style={styles.button}
+      >
+        QR Scanner
+      </Button>
+      <Button
+        type="ghost"
+        onPress={() => navigation.navigate('Register User')}
+        style={styles.button}
+      >
+        Register User
+      </Button>
+      <Button
+        type="ghost"
+        onPress={() => navigation.navigate('Users')}
+        style={styles.button}
+      >
+        View All Users
+      </Button>
     </WingBlank>
   </View>
 )
@@ -51,7 +59,10 @@ const styles = StyleSheet.create({
     width
   },
   titleText: {
-    fontSize: 20,
+    fontSize: 16,
+  },
+  button: {
+    marginBottom: 10
   }
 });
 
