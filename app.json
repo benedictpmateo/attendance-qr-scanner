@@ -12,6 +12,14 @@
       "ios",
       "android",
       "web"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.bmat.attendancescanner",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.bmat.attendancescanner",
+      "versionCode": 1
+    }
   }
 }
